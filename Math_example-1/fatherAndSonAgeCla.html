@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+<body>
+		<script>	
+        			var fatherAge = 30;
+					var sonAge = 110-30;
+					
+					function CalcuateFSAge(Age){ 
+						var father =2*fatherAge+Age;
+						var son = (sonAge + Age);
+						var result = son-father;
+						
+						document.write("Father Age is: "+result+"<br/>");
+						document.write("Son Age is: "+result-sonAge+"<br/>");
+						
+						return result;
+						
+					}
+					document.write("Father and Son Altogether age is: "+CalcuateFSAge(20));
+					
+        </script>
+</body>
+</html>
