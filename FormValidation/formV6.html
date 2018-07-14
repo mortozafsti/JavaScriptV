@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style>
+	.mm{ 
+		color:red;
+	}
+</style>
+</head>
+
+<body>
+		
+        <table>
+        	<form name="myfrom" method="get" action="formV6.html" onsubmit="return formValidation()">
+            	<tr>
+                	<td><label>Name</label></td>
+                    <td>:</td>
+                    <td>
+                    	<input type="text" name="fname" />
+                        <label id="fnamex" class="mm"></label>
+                    </td>
+                </tr>
+                <tr>
+                	<td><label>Gender</label></td>
+                    <td>:</td>
+                    <td>
+                    	<input type="radio" name="gender" value="Male" />Male
+                        <input type="radio" name="gender" value="FeMale" />FeMale
+                        <label id="genderx" class="mm"></label>
+                    </td>
+                </tr>
+                <tr>
+                	<td><label>Education</label></td>
+                    <td>:</td>
+                    <td>
+                    	<input type="checkbox" name="ssc" value="SSC" />SSC
+                        <input type="checkbox" name="hsc" value="HSC" />HSC
+                        <label id="edu" class="mm"></label>
+                    </td>
+                </tr>
+                <tr>
+                	<td><label>Round</label></td>
+                    <td>:</td>
+                    <td>
+                    	<select name="rounds">
+                        	<option>Select the Round</option>
+                            <option>Round-33</option>
+                            <option>Round-37</option>
+                            <option>Round-38</option>
+                        </select>
+                        <label id="roundx" class="mm"></label>
+                    </td>
+                </tr>
+                <tr>
+                	<td><label>Comments</label></td>
+                    <td>:</td>
+                    <td>
+                    	<textarea name="msg" rows="5" cols="22" placeholder="Enter At least 10 Character"></textarea>
+                        <label id="messages" class="mm"></label>
+                    </td>
+                </tr>
+                <tr>
+                	<td><label></label></td>
+                    <td></td>
+                    <td>
+                    	<input type="submit" value="Submit" />
+                        <input type="reset" value="Clear Form" />
+                        
+                    </td>
+                </tr>
+            </form>
+        </table>
+        
+        <script>
+        			function formValidation(){ 
+						var name = document.forms["myfrom"]["fname"].value;
+						var gender = document.forms["myfrom"]["gender"].value;
+						var education = "";
+						if(document.forms["myfrom"].ssc.checked){ 
+							education+=","+document.forms["myfrom"]["ssc"].value;
+						}
+						if(document.forms["myfrom"].hsc.checked){ 
+							education+=document.forms["myfrom"]["hsc"].value;
+						}
+						var ssc = document.forms["myfrom"]["ssc"].value;
+						var hsc = document.forms["myfrom"]["hsc"].value;
+						var rounds = document.forms["myfrom"]["rounds"].value;
+						var comment = document.forms["myfrom"]["msg"].value;
+						
+						if(name==""){ 
+							document.getElementById('fnamex').innerHTML = "Name must be filled out";
+							return false;
+						}else if(name.length < 3 ){ 
+							document.getElementById('fnamex').innerHTML = "Name at least 3 character";
+							return false;
+						}else if(gender==""){ 
+							document.getElementById('genderx').innerHTML = "Select your Gender";
+							return false;
+						}else if(!document.forms["myfrom"].ssc.checked && !document.forms["myfrom"].hsc.checked){ 
+							document.getElementById('edu').innerHTML = "Select your Education";
+							return false;
+						}else if(rounds=="Select the Round"){ 
+							document.getElementById('roundx').innerHTML = "Select your Round";
+							return false;
+						}else if(comment.length < 10){ 
+							document.getElementById('messages').innerHTML = "At least 10 Character";
+							return false;
+						}else{
+							document.write("Name: "+name+"<br/>");
+							document.write("Gender: "+gender+"<br/>");
+							document.write("Education: "+education+"<br/>");
+							document.write("Round: "+rounds+"<br/>");
+							document.write("Comments: "+comment+"<br/>");
+						}	
+					}
+        </script>
+</body>
+</html>
