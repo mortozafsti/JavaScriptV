@@ -6,17 +6,17 @@
 </head>
 
 <body>
-		<script>
-        			var n;
-					function factorial(n){ 
-						if(n == 0){ 
-							return 1;
-						}else{ 
-							return n*factorial(n-1);
+			<script>
+            			var n;
+						function factorial(n){ 
+							if(n == 0){ 
+								return 1;
+							}else{ 
+								return n*factorial(n-1);
+							}
 						}
-					}
-					var number = prompt("Enter the number","");
-					document.write("The Number of Factorial "+number+" is: "+factorial(number));
-        </script>
+						var number = prompt("Enter the number","");
+						document.write("The Factorial of "+number+" is "+factorial(number));
+            </script>
 </body>
 </html>

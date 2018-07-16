@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
@@ -10,16 +10,16 @@
         			function isPrime(num){ 
 						var n = Math.sqrt(num);
 						for(i=2;i<=n;i++){ 
-							if(num%i == 0)
+							if(num%i==0)
 							return false;
 						}
 						return true;
 					}
-					var nuumber = prompt("Enter the Number","");
-					if(isPrime(nuumber)){ 
-						document.write(nuumber+" is Prime");
+					var number = prompt("Enter the number","");
+					if(isPrime(number)){ 
+						document.write(number+" is Prime");
 					}else{ 
-						document.write(nuumber+" is not Prime");
+						document.write(number+" is not Prime");
 					}
         </script>
 </body>
