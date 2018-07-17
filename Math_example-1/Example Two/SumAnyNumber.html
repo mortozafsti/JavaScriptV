@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+		<script>
+		
+					var sn = parseInt(prompt("Enter the Start Number",""));
+					var en = parseInt(prompt("Enter the End Number",""));
+					
+        			function SumAnyNumber(sn,en){ 
+					var sum = 0;
+						if(sn < en){ 
+							for(i=sn; i<=en; i++){ 
+								sum += i;
+								
+							}
+							document.write("The Total Sum is: "+sum);
+						}else{ 
+							for(i=sn; i>=en; i--){ 
+								sum += i;
+								
+							}
+							document.write("The Total Sum is: "+sum);
+						}
+					}
+					SumAnyNumber(sn,en);
+        </script>
+</body>
+</html>
