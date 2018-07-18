@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style>
+	.mm{ 
+		color:red;
+	}
+</style>
+</head>
+
+<body>
+			<table>
+            	<form name="myform" method="post" action="FormValidation11.html" onsubmit="return formValidation()">
+                	<tr>
+                    	<td><label>Name</label></td>
+                        <td>:</td>
+                        <td>
+                        	<input type="text" name="fname" />
+                            <label class="mm" id="fnamex"></label>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td><label>Gender</label></td>
+                        <td>:</td>
+                        <td>
+                        	<input type="radio" name="gender" value="Male" />Male
+                            <input type="radio" name="gender" value="FeMale" />FeMale
+                            <label class="mm" id="genderx"></label>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td><label>Round</label></td>
+                        <td>:</td>
+                        <td>
+                        	<select name="rounds">
+                            	<option>Select the Round</option>
+                                <option>Round-33</option>
+                                <option>Round-36</option>
+                                <option>Round-37</option>
+                            </select>
+                            <label class="mm" id="roundsx"></label>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td></td>
+                        <td></td>
+                        <td>
+                        	<input type="submit" value="Submit" />
+                            <input type="reset" value="Clear Form" />
+                        </td>
+                    </tr>
+                </form>
+            </table>
+            
+            <script>
+            		function formValidation(){ 
+						
+						var name = document.forms["myform"]["fname"].value;
+						var gender = document.forms["myform"]["gender"].value;
+						var rounds = document.forms["myform"]["rounds"].value;
+						
+						if(name==""){ 
+							document.getElementById('fnamex').innerHTML = "Name must  be filled out";
+							return false;
+						}else if(name.length<3){ 
+							document.getElementById('fnamex').innerHTML = "Name must  at least 3 character";
+							return false;
+						}else if(gender==""){ 
+							document.getElementById('genderx').innerHTML = "Select Your Gender";
+							return false;
+						}else if(rounds=="Select the Round"){ 
+							document.getElementById('roundsx').innerHTML = "Select Your Round";
+							return false;
+						}else{ 
+							document.write("Name: "+name+"<br/>");
+							document.write("Gender: "+gender+"<br/>");
+							document.write("Round: "+rounds+"<br/>");
+						}
+						
+					}
+            </script>
+</body>
+</html>
