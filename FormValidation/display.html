@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+			<script>
+            			var queryString = decodeURIComponent(window.location.search);
+						queryString = queryString.substring(1);
+						var query = queryString.split("&");
+						for (var i=0;i<query.length; i++){ 
+							document.write(query[i]+"<br/>");
+						}
+            </script>
+</body>
+</html>
