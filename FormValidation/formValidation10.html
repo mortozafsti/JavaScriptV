@@ -46,11 +46,11 @@
 								document.getElementById('message').innerHTML = "At Least 10 Character";
 								return false;
 							}else{ 
-								document.write("Name: "+name+"<br/>");
-								document.write("Gender: "+gender+"<br/>");
-								document.write("Education: "+education+"<br/>");
-								document.write("Round: "+rounds+"<br/>");
-								document.write("Comments: "+comments+"<br/>");
+								wim.document.write("Name: "+name+"<br/>");
+								wim.document.write("Gender: "+gender+"<br/>");
+								wim.document.write("Education: "+education+"<br/>");
+								wim.document.write("Round: "+rounds+"<br/>");
+								wim.document.write("Comments: "+comments+"<br/>");
 							}
 						}
 						
@@ -65,10 +65,18 @@
 							var queryString = "?para1= "+value1+"&para2= "+value2+"&para3= "+value3+"&para4= "+value4+"&para5= "+value5;
 							window.location.href = "display.html" +queryString;
 						}
+						var win;
+						function OpenWindow(){ 
+							win = window.open("","","width=400");
+							win.document.write("<h2><center>Form Output</center></h2><hr>");
+						}
+						function CloseWindow(){ 
+							win.close();
+						}
             </script>
             
             <table>
-            	<form name="myfrom"   action="display.html" target="_blank" onsubmit="return formValidation()">
+            	<form name="myfrom">
                 	<tr>
                     	<td><label>Name</label></td>
                         <td>:</td>
@@ -121,12 +129,16 @@
                     	<td><label></label></td>
                         <td></td>
                         <td>
-                        	<input type="submit" value="Submit" />
+                        	
                             <input type="reset" value="Clear Form" />
                             
                         </td>
                     </tr>
                 </form>
+                <button onClick="OpenWindow()">Open Window</button>
+                <button onClick="formValidation">Add</button>
+                <button onClick="CloseWindow()">Close Window</button>
             </table>
+            	
 </body>
 </html>
