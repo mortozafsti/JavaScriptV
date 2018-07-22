@@ -33,7 +33,9 @@
 							}else if(name.length<3){ 
 								document.getElementById('namex').innerHTML = "Name at least 3 character";
 								return false;
-							}else if(gender==""){ 
+							}else{ 
+								document.getElementById('namex').innerHTML = "";
+							} if(gender==""){ 
 								document.getElementById('genderx').innerHTML = "Select Your Gender";
 								return false;
 							}else if(!document.forms["myfrom"].ssc.checked && !document.forms["myfrom"].ssc.checked){ 
@@ -65,18 +67,11 @@
 							var queryString = "?para1= "+value1+"&para2= "+value2+"&para3= "+value3+"&para4= "+value4+"&para5= "+value5;
 							window.location.href = "display.html" +queryString;
 						}
-						var win;
-						function OpenWindow(){ 
-							win = window.open("","","width=400");
-							win.document.write("<h2><center>Form Output</center></h2><hr>");
-						}
-						function CloseWindow(){ 
-							win.close();
-						}
+						
             </script>
             
             <table>
-            	<form name="myfrom">
+            	<form name="myfrom" method="post" action="formValidation10.html" onSubmit="return formValidation()">
                 	<tr>
                     	<td><label>Name</label></td>
                         <td>:</td>
@@ -129,15 +124,13 @@
                     	<td><label></label></td>
                         <td></td>
                         <td>
-                        	
+                        	 <input type="submit" value="Submit" />
                             <input type="reset" value="Clear Form" />
                             
                         </td>
                     </tr>
                 </form>
-                <button onClick="OpenWindow()">Open Window</button>
-                <button onClick="formValidation">Add</button>
-                <button onClick="CloseWindow()">Close Window</button>
+                
             </table>
             	
 </body>
