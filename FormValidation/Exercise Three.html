@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+
+		<table>
+        		<form name="myfoem">
+                	<tr>
+                    	<td><label>Name</label></td>
+                        <td>:</td>
+                        <td>
+                        	<input type="text" name="fname" />
+                            <label id="fnamex" class="mm"></label>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td><label>Gender</label></td>
+                        <td>:</td>
+                        <td>
+                        	<input type="radio" name="gender" value="Male" />Male
+                            <input type="radio" name="gender" value="FeMale" />FeMale
+                            <label id="genderx" class="mm"></label>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td><label>Education</label></td>
+                        <td>:</td>
+                        <td>
+                        	<input type="checkbox" name="ssc" value="SSC" />SSC
+                            <input type="checkbox" name="hsc" value="HSC" />HSC
+                            <label id="edux" class="mm"></label>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td><label>Round</label></td>
+                        <td>:</td>
+                        <td>
+                        	<select name="rounds">
+                            	<option>Select the Round</option>
+                                <option>Round-34</option>
+                                <option>Round-35</option>
+                                <option>Round-36</option>
+                                <option>Round-37</option>
+                            </select>
+                            <label id="roudsx" class="mm"></label>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td><label>Comments</label></td>
+                        <td>:</td>
+                        <td>
+                        	<textarea name="msg" cols="22" rows="5" placeholder="Enter At Least 10 Character"></textarea>
+                            <label id="message" class="mm"></label>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td><label></label></td>
+                        <td></td>
+                        <td>
+                        	<input type="reset" value="Reset"/>
+                           
+                        </td>
+                    </tr>
+                </form>
+                
+        </table>
+        <button onclick="validationForm()">Submit</button>
+                <button onclick="WindowClosed()">Colse Window</button>
+		<script>
+				
+				var win;
+        		function WindowClosed(){ 
+					win.close();
+				}
+				function validationForm(){ 
+					var name = document.forms["myfoem"]["fname"].value;
+					var gender = document.forms["myfoem"]["gender"].value;
+					var education ="";
+					if(document.forms["myfoem"].ssc.checked){ 
+						education+=document.forms["myfoem"]["ssc"].value;
+					}
+					if(document.forms["myfoem"].hsc.checked){ 
+						education+=", "+document.forms["myfoem"]["hsc"].value;
+					}
+					var rounds = document.forms["myfoem"]["rounds"].value;
+					var comments = document.forms["myfoem"]["msg"].value;
+					
+					if(name==""){ 
+						document.getElementById('fnamex').innerHTML = "Name Must Be Flled out";
+						return false;
+					}else if(name.length<3){ 
+						document.getElementById('fnamex').innerHTML = "Name Must At Least 10 Character";
+						return false;
+					}else{ 
+						document.getElementById('fnamex').innerHTML = "";
+					}
+					if(gender==""){ 
+						document.getElementById('genderx').innerHTML = "Select Your Gender";
+						return false;
+					}else{ 
+						document.getElementById('genderx').innerHTML = "";
+					}
+					if(!document.forms["myfoem"].ssc.checked && !document.forms["myfoem"].hsc.checked){ 
+						document.getElementById('edux').innerHTML = "Select Your Education";
+						return false;
+					}else{ 
+						document.getElementById('edux').innerHTML = "";
+					}
+					if(rounds=="Select the Round"){ 
+						document.getElementById('roudsx').innerHTML = "Select Your Round";
+						return false;
+					}else{ 
+						document.getElementById('roudsx').innerHTML = "";
+					}
+					if(comments.length<10){ 
+						document.getElementById('message').innerHTML = "At Least 10 Character";
+						return false;
+					}else{ 
+						document.getElementById('message').innerHTML = "";
+						
+						win = window.open("","","");
+						win.document.write("<h2><center>Forms Output</center></h2><hr>");
+						
+						win.document.write("Name: "+name+"<br/>");
+						win.document.write("Gender: "+gender+"<br/>");
+						win.document.write("Education: "+education+"<br/>");
+						win.document.write("Round: "+rounds+"<br/>");
+						win.document.write("Comments: "+comments+"<br/>");
+					}
+					
+				}
+        </script>
+</body>
+</html>
