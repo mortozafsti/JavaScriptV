@@ -50,6 +50,14 @@
                         </td>
                     </tr>
                     <tr>
+                    	<td><label>Email</label></td>
+                        <td>:</td>
+                        <td>
+                        	<input type="email" name="emails" />
+                            <label id="emailss" class="mm"></label>
+                        </td>
+                    </tr>
+                    <tr>
                     	<td><label>Comments</label></td>
                         <td>:</td>
                         <td>
@@ -87,6 +95,7 @@
 						education+=", "+document.forms["myfoem"]["hsc"].value;
 					}
 					var rounds = document.forms["myfoem"]["rounds"].value;
+					var email = document.forms["myfoem"]["emails"].value;
 					var comments = document.forms["myfoem"]["msg"].value;
 					
 					if(name==""){ 
@@ -116,6 +125,15 @@
 					}else{ 
 						document.getElementById('roudsx').innerHTML = "";
 					}
+					if(email==""){ 
+						document.getElementById('emailss').innerHTML = "Please Enter Your Email";
+						return false;
+					}else if(email.match(/^[a-zA-Z0-9_.]+\@[a-zA-Z]+\.[a-z]{2,3}$/)){ 
+						document.getElementById('emailss').innerHTML = "Please Enter Your Emails";
+						return true;
+					}else{ 
+						document.getElementById('emailss').innerHTML = "";
+					}
 					if(comments.length<10){ 
 						document.getElementById('message').innerHTML = "At Least 10 Character";
 						return false;
@@ -129,6 +147,7 @@
 						win.document.write("Gender: "+gender+"<br/>");
 						win.document.write("Education: "+education+"<br/>");
 						win.document.write("Round: "+rounds+"<br/>");
+						win.document.write("Email: "+email+"<br/>");
 						win.document.write("Comments: "+comments+"<br/>");
 					}
 					

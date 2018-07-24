@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body style="font-size:18px;width:70%; margin: 0 auto">
+		<script>
+        			var sentence = "Thiis is Book and it is my hobbya";
+					var lengths = sentence.length;
+					var Charat = sentence.charAt(3);
+					document.write("The Length of Sentence: "+lengths+"</br>");
+					document.write("The Number of Character: "+Charat+"</br>");
+					
+					var count=0;
+					for(i=0;i<sentence.length;i++){ 
+						var ch = sentence.charAt(i).toLowerCase()
+						if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u')
+						count++
+						
+					}
+					document.write("The Count of vioul: "+count);
+        </script>
+</body>
+</html>
