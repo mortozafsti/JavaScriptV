@@ -80,10 +80,13 @@
 						var gender = document.forms["myform"]["gender"].value;
 						var education = "";
 						if(document.forms["myform"].ssc.checked){ 
-							education = document.forms["myform"]["ssc"].value;
+							education += document.forms["myform"]["ssc"].value;
 						}
-						if(document.forms["myform"].hsc.checked){ 
-							education =", "+ document.forms["myform"]["hsc"].value;
+						if(document.forms["myform"].ssc.checked && document.forms["myform"].hsc.checked){ 
+							education +=", "+ document.forms["myform"]["hsc"].value;
+						}
+						if(!document.forms["myform"].ssc.checked && document.forms["myform"].hsc.checked){ 
+							education +=document.forms["myform"]["hsc"].value;
 						}
 						var rounds = document.forms["myform"]["rounds"].value;
 						var comments = document.forms["myform"]["msg"].value;

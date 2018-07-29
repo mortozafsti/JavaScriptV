@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style>
+	.mm{ 
+		color:red;
+		padding: 3px 10px;
+	}
+</style>
+</head>
+
+<body>
+		<table>
+        	<form name="myform" >
+            	<tr>
+                	<td><label>Email</label></td>
+                    <td>:</td>
+                    <td>
+                    	<input type="email" name="email"/>
+                        <label id="emailx" class="mm"></label>
+                    </td>
+                </tr>
+                
+                <tr>
+                	<td><label></label></td>
+                    <td></td>
+                    <td>
+                    	<button onclick="PerfectFormValidation()">SEND</button>
+                        
+                    </td>
+                </tr>
+            </form>
+        </table>
+          
+                        
+                        
+		<script>
+				
+				
+				function PerfectFormValidation(){ 
+					
+					var email = document.forms["myform"]["email"].value;
+					
+					
+					if(email==""){ 
+					     document.getElementById('emailx').innerHTML ="Email Must Be Filled Out";
+						return false;
+					}else if(email.indexOf("@",0) < 0 ){ 
+						document.getElementById('emailx').innerHTML = "Email Address is Worng";
+						return false;
+					}else if(email.indexOf(".",0) < 0 ){ 
+						document.getElementById('emailx').innerHTML = "Email Address is Worng";
+						return false;
+					}else{
+						document.getElementById('emailx').innerHTML = "Email Address is Correct";
+						
+						
+					}
+				}
+        </script>
+</body>
+</html>
